@@ -1,5 +1,5 @@
 module.exports = {
-  base: '/',
+  base: '/front-end-interview-guide/',
   locales: {
     '/': {
       lang: 'zh-CN',
@@ -10,9 +10,9 @@ module.exports = {
   themeConfig: {
     sidebarDepth: 3,
     nav: [{
-        text: '指南',
-        link: '/'
-      },
+      text: '指南',
+      link: '/'
+    },
       {
         text: '前端',
         link: '/front-end/'
@@ -41,6 +41,8 @@ module.exports = {
     sidebar: {
       '/front-end/': [
         '',
+        'CSS',
+        'JS'
       ],
       '/career-plan/': [
         '',
@@ -54,6 +56,7 @@ module.exports = {
       '/interview-questions/': [
         '',
         '01',
+        '02',
       ],
       '/': [
         '',
