@@ -18,7 +18,7 @@ module.exports = {
         link: '/front-end/'
       },
       {
-        text: '职业规划',
+        text: 'hr面试套路',
         link: '/career-plan/'
       },
       {
