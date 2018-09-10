@@ -1,13 +1,13 @@
 # CSS
 
-## box-sizing盒模型
+## 盒模型
 `box-sizing`属性主要用来控制元素的盒模型的解析模式。默认值是`content-box`
 - content-box：让元素维持W3C的标准盒模型。元素的宽度/高度由border + padding + content的宽度/高度决定，设置width/height属性指的是content部分的宽/高
 - border-box：让元素维持IE传统盒模型（IE6以下版本和IE6~7的怪异模式）。设置width/height属性指的是border + padding + content
 - 应用场景：统一风格的表单元素
 表单中有一些input元素其实还是展现的是传统IE盒模型，带有一些默认的样式，而且在不同平台或者浏览器下的表现不一，造成了表单展现的差异。此时我们可以通过box-sizing属性来构建一个风格统一的表单元素。
 
-## 水平垂直居中的方法
+## 水平垂直居中
 行内布局
 - line-height + text-align
 - vertical-align + text-align
@@ -17,8 +17,8 @@
 - position absolute + negative margin
 - position absolute + translate(-50%, -50%)
 
-## 父容器子容器不确定宽高的块级元素，做上下居中
-
+## 上下居中
+父容器子容器不确定宽高的块级元素，做上下居中
 1. flex
 ```css
 #wrap{
@@ -69,7 +69,7 @@ display: -webkit-box;
 
 [for detail](https://github.com/hawx1993/tech-blog/issues/12)
 
-## 实现左边定宽右边自适应效果
+## 左边定宽右边自适应
 
 1. table(父级元素)与tabel-cell（两个子集元素）
 
@@ -79,12 +79,13 @@ display: -webkit-box;
 
 4. 左边定宽，左边设置position:absolute；右边设置距离左边的宽度
 
-## 三列布局（中间固定两边自适应宽度）
+## 三列布局
 
+中间固定两边自适应宽度
 1. 采用浮动布局（左边左浮动，右边右浮动，中间margin：0  宽度值）
 2. 绝对定位方式（左右绝对定位，左边left0右边right0，中间上同）
 
-## BFC（Block Formatting Contexts）块级格式化上下文
+## BFC块级格式化上下文
 
 块格式化上下文（block formatting context） 是页面上的一个独立的渲染区域，容器里面的子元素不会在布局上影响到外面的元素。它是决定块盒子的布局及浮动元素相互影响的一个因素。
 
@@ -100,7 +101,7 @@ display: -webkit-box;
 1. 清除内部浮动：对子元素设置浮动后，父元素会发生高度塌陷，也就是父元素的高度变为0。解决这个问题，只需要把把父元素变成一个BFC就行了。常用的办法是给父元素设置overflow:hidden。
 2. 上下margin重合问题，可以通过触发BFC来解决
 
-## 清除浮动元素的方法和各自的优缺点
+## 清除浮动
 清除浮动，实际上是清除父元素的高度塌陷。因为子元素脱离了父元素的文档流，所以，父元素失去了高度，导致了塌陷。要解决这个问题，就是让父元素具有高度。
 
 浮动元素的特性：
@@ -150,3 +151,25 @@ display: -webkit-box;
 - relative 生成相对定位的元素，相对于其在普通流中的位置进行定位。
 - static 默认值。没有定位，元素出现在正常的流中
 - sticky 生成粘性定位的元素，容器的位置根据正常文档流计算得出
+
+## 有哪些多屏适配方案
+
+- media query + rem
+- flex
+- 弹性布局
+- flexiable 整体缩放（动态设置缩放系数的方式，
+- 让layout viewport与设计图对应，极大地方便了重构，同时也避免了1px的问题）
+
+## HTML5新特性
+
+- 画布(Canvas) API
+- 地理(Geolocation) API
+- 音频、视频API(audio,video)
+- localStorage和sessionStorage
+- webworker, websocket
+- header,nav,footer,aside,article,section
+
+web worker是运行在浏览器后台的js程序，他不影响主程序的运行，是另开的一个js线程，可以用这个线程执行复杂的数据操作，然后把操作结果通过postMessage传递给主线程，这样在进行复杂且耗时的操作时就不会阻塞主线程了。
+
+
+

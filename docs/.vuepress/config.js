@@ -18,16 +18,12 @@ module.exports = {
         link: '/front-end/'
       },
       {
-        text: 'hr面试套路',
+        text: '面试技巧',
         link: '/career-plan/'
       },
       {
         text: '算法',
         link: '/calculation/'
-      },
-      {
-        text: '性能安全',
-        link: '/safe/'
       },
       {
         text: '面试题',
@@ -41,22 +37,29 @@ module.exports = {
     sidebar: {
       '/front-end/': [
         '',
+        'JS',
         'CSS',
-        'JS'
+        '01',
+        '02',
+        '03',
+        '04',
+        '05',
       ],
       '/career-plan/': [
         '',
+        '01',
+        '02',
       ],
       '/calculation/': [
         '',
-      ],
-      '/safe/': [
-        '',
+        '01',
       ],
       '/interview-questions/': [
         '',
         '01',
         '02',
+        '03',
+        '04',
       ],
       '/': [
         '',
