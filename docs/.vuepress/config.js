@@ -22,7 +22,7 @@ module.exports = {
         link: '/career-plan/'
       },
       {
-        text: '算法',
+        text: '计算机基础',
         link: '/calculation/'
       },
       {
@@ -44,6 +44,7 @@ module.exports = {
         '03',
         '04',
         '05',
+        '06',
       ],
       '/career-plan/': [
         '',
