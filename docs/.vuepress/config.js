@@ -9,10 +9,7 @@ module.exports = {
   },
   themeConfig: {
     sidebarDepth: 3,
-    nav: [{
-      text: '指南',
-      link: '/'
-    },
+    nav: [
       {
         text: '前端',
         link: '/front-end/'
@@ -45,6 +42,7 @@ module.exports = {
         '04',
         '05',
         '06',
+        'recommend',
       ],
       '/career-plan/': [
         '',
