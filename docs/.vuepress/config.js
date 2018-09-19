@@ -35,6 +35,7 @@ module.exports = {
       '/front-end/': [
         '',
         'JS',
+        'Browser',
         'CSS',
         '01',
         '02',
