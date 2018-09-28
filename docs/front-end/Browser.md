@@ -171,7 +171,8 @@ JS事件：target与currentTarget区别
 ```
 
 ## 跨域
-### 什么是同源策略即限制
+什么是同源策略即限制
+
 同源策略限制从一个源加载的文档或脚本如何与与来自另一个源的资源进行交互。这是一个用于隔离潜在恶意文件的关键的安全机制。
 
 - 一个源包括：协议(http\https)、域名(www.xxx.xxx)、端口(default:80)
@@ -181,4 +182,109 @@ JS事件：target与currentTarget区别
 - Cookie、LocalStorage和IndexDB无法读取
 - DOM无法获得
 - AJAX请求不能发送
+
+:::tip
+script、image、iframe的src都不受同源策略的影响。
+:::
+
+1. JSONP,回调函数+数据就是 JSON With Padding，简单、易部署。（做法：动态插入script标签，设置其src属性指向提供JSONP服务的URL地址，查询字符串中加入 callback 指定回调函数，返回的 JSON 被包裹在回调函数中以字符串的形式被返回，需将script标签插入body底部）。缺点是只支持GET，不支持POST（原因是通过地址栏传参所以只能使用GET）
+2. document.domain 跨子域 （ 例如a.qq.com嵌套一个b.qq.com的iframe ，如果a.qq.com设置document.domain为qq.com 。b.qq.com设置document.domain为qq.com， 那么他俩就能互相通信了，不受跨域限制了。 注意：只能跨子域）
+3. window.name + iframe ==> http://www.tuicool.com/articles/viMFbqV，支持跨主域。不支持POST
+4. HTML5的postMessage()方法允许来自不同源的脚本采用异步方式进行有限的通信，可以实现跨文本档、多窗口、跨域消息传递。适用于不同窗口iframe之间的跨域
+5. CORS（Cross Origin Resource Share）对方服务端设置响应头
+6. 服务端代理
+
+在浏览器客户端不能跨域访问，而服务器端调用HTTP接口只是使用HTTP协议，不会执行JS脚本，不需要同源策略，也就没有跨越问题。简单地说，就是浏览器不能跨域，后台服务器可以跨域。（一种是通过http-proxy-middleware插件设置后端代理；另一种是通过使用http模块发出请求）
+
+CORS请求默认不发送Cookie和HTTP认证信息。如果要把Cookie发到服务器，一方面要服务器同意，指定`Access-Control-Allow-Credentials`字段。
+
+## Cookie
+```javascript
+Set-Cookie: value[; expires=date][; domain=domain][; path=path][; secure]
+```
+
+如果想让cookie存在一段时间，就要为expires属性设置为未来的一个用毫秒数表示的过期日期或时间点，expires默认为设置的expires的当前时间。现在已经被max-age属性所取代，max-age用秒来设置cookie的生存期。如果max-age为0，则表示删除该cookie。
+
+cookie的属性：
+- HttpOnly属性告之浏览器该 cookie 绝不能通过 JavaScript 的 `document.cookie` 属性访问。
+- domain属性可以使多个web服务器共享cookie。
+- 只有path属性匹配向服务器发送的路径，Cookie 才会发送。必须是绝对路径
+- secure属性用来指定Cookie只能在加密协议HTTPS下发送到服务器。
+- max-age属性用来指定Cookie有效期
+- expires属性用于指定Cookie过期时间。它的格式采用Date.toUTCString()的格式。
+
+浏览器的同源政策规定，两个网址只要域名相同和端口相同，就可以共享Cookie。
+
+## websocket
+WebSocket 使用ws或wss协议，Websocket是一个持久化的协议，相对于HTTP这种非持久的协议来说。
+
+WebSocket API最伟大之处在于服务器和客户端可以在给定的时间范围内的任意时刻，相互推送信息。WebSocket并不限于以Ajax(或XHR)方式通信，因为Ajax技术需要客户端发起请求，而WebSocket服务器和客户端可以彼此相互推送信息；XHR受到域的限制，而WebSocket允许跨域通信。
+
+```javascript
+// 创建一个Socket实例
+var socket = new WebSocket('ws://localhost:8080');
+// 打开Socket
+socket.onopen = function(event) {
+  // 发送一个初始化消息
+  socket.send('I am the client and I\'m listening!');
+  // 监听消息
+  socket.onmessage = function(event) {
+    console.log('Client received a message',event);
+  };
+  // 监听Socket的关闭
+  socket.onclose = function(event) {
+    console.log('Client notified socket has closed',event);
+  };
+  // 关闭Socket....
+  //socket.close()
+};
+```
+
+## fetch和Ajax
+`XMLHttpRequest` 是一个设计粗糙的 API，不符合关注分离（Separation of Concerns）的原则，配置和调用方式非常混乱，而且基于事件的异步模型写起来也没有现代的 Promise，`generator/yield`，`async/await` 友好。
+
+fetch 是浏览器提供的一个新的 web API，它用来代替 Ajax（XMLHttpRequest），其提供了更优雅的接口，更灵活强大的功能。
+
+Fetch 优点主要有：
+- 语法简洁，更加语义化
+- 基于标准 Promise 实现，支持 `async/await`
+
+```javascript
+fetch(url).then(response => response.json())
+  .then(data => console.log(data))
+  .catch(e => console.log("Oops, error", e))
+```
+
+##  ajax请求和原理
+
+```javascript
+var xhr = new XMLHTTPRequest();
+// 请求 method 和 URI
+xhr.open('GET', url);
+// 请求内容
+xhr.send();
+// 响应状态
+xhr.status
+// xhr 对象的事件响应
+xhr.onreadystatechange = function() {}
+xhr.readyState
+// 响应内容
+xhr.responseText
+```
+AJAX的工作原理
+
+Ajax的工作原理相当于在用户和服务器之间加了—个中间层(AJAX引擎),使用户操作与服务器响应异步化。　Ajax的原理简单来说通过XmlHttpRequest对象来向服务器发异步请求，从服务器获得数据，然后用javascript来操作DOM而更新页面。
+
+ajax优缺点
+
+优点：
+- 无刷新更新数据
+- 异步与服务器通信
+- 前后端负载均衡
+
+缺点：
+
+1. ajax干掉了Back和history功能，对浏览器机制的破坏
+2. 对搜索引擎支持较弱
+3. 违背了URI和资源定位的初衷
 
