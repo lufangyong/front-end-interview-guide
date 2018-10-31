@@ -1,5 +1,6 @@
 module.exports = {
-  base: '/front-end-interview-guide/',
+  // base: '/front-end-interview-guide/',
+  base: '',
   locales: {
     '/': {
       lang: 'zh-CN',
