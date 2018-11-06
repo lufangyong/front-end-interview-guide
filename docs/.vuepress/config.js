@@ -1,6 +1,9 @@
 module.exports = {
   // base: '/front-end-interview-guide/',
   base: '',
+  head: [
+    ['link', { rel: 'shortcut icon', type: "image/x-icon", href: `./public/favicon.ico` }]
+ ],
   locales: {
     '/': {
       lang: 'zh-CN',
@@ -10,22 +13,17 @@ module.exports = {
   },
   themeConfig: {
     sidebarDepth: 3,
-    nav: [
-      {
+    nav: [{
         text: '前端',
         link: '/front-end/'
-      },
-      {
-        text: '面试技巧',
-        link: '/career-plan/'
       },
       {
         text: '计算机基础',
         link: '/calculation/'
       },
       {
-        text: '面试题',
-        link: '/interview-questions/'
+        text: '面试',
+        link: '/interview/'
       },
       {
         text: 'Github',
@@ -36,25 +34,35 @@ module.exports = {
       '/front-end/': [
         '',
         'JS',
-        'Browser',
+        'browser',
         'CSS',
         'frame',
         'FNEngineering',
         'performance',
         'http',
         'safe',
-        'designPattern',
+        'design-pattern',
         'node',
         'recommend',
+      ],
+      '/calculation/': [
+        '',
+        'data-structure',
+        'calculation',
+      ],
+      '/interview/': [
+        '',
+        'resume',
+        'tricks',
+        'common',
+        '360',
+        'mt-ele',
+        'tt',
       ],
       '/career-plan/': [
         '',
         '01',
         '02',
-      ],
-      '/calculation/': [
-        '',
-        '01',
       ],
       '/interview-questions/': [
         '',

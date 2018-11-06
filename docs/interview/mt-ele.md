@@ -17,18 +17,18 @@
 ```javascript
 //依次输出 12354
 setTimeout(function() {
-  console.log(4);
-}, 0);
+  console.log(4)
+}, 0)
 new Promise(function(resolve) {
-  console.log(1);
+  console.log(1)
   for (var i = 0; i < 10000; i++) {
-    i === 9999 && resolve();
+    i === 9999 && resolve()
   }
-  console.log(2);
+  console.log(2)
 }).then(function() {
-  console.log(5);
-});
-console.log(3);
+  console.log(5)
+})
+console.log(3)
 ```
 
 ### 问题
@@ -66,15 +66,15 @@ console.log(3);
 - 类数组只有索引值和长度，没有数组的各种方法，所以如果要类数组调用数组的方法，就需要使用 Array.prototype.method.call 来实现。
 
 ```javascript
-var arrayLike = { 0: 'name', 1: 'age', 2: 'sex', length: 3 };
+var arrayLike = { 0: 'name', 1: 'age', 2: 'sex', length: 3 }
 // 1. slice
-Array.prototype.slice.call(arrayLike); // ["name", "age", "sex"]
+Array.prototype.slice.call(arrayLike) // ["name", "age", "sex"]
 // 2. splice
-Array.prototype.splice.call(arrayLike, 0); // ["name", "age", "sex"]
+Array.prototype.splice.call(arrayLike, 0) // ["name", "age", "sex"]
 // 3. ES6 Array.from
-Array.from(arrayLike); // ["name", "age", "sex"]
+Array.from(arrayLike) // ["name", "age", "sex"]
 // 4. apply
-Array.prototype.concat.apply([], arrayLike);
+Array.prototype.concat.apply([], arrayLike)
 ```
 
 ### 2. 跨域
@@ -101,17 +101,17 @@ a:link
 - 方法的第一个参数作为当前的上下文, 即 this, 传入 bind() 方法的第二个及之后的参数加上绑定函数运行时自身的参数按照顺序作为原函数的参数来调用原函数.
 
 ```javascript
-var x = 8;
+var x = 8
 var o = {
   x: 10,
   getX: function() {
-    console.log(this.x);
+    console.log(this.x)
   }
-};
-var f = o.getX;
-f(); //8, 由于没有绑定执行时的上下文, this默认指向window, 打印了全局变量x的值
-var g = f.bind(o);
-g(); //10, 绑定this后, 成功的打印了o对象的x属性的值.
+}
+var f = o.getX
+f() //8, 由于没有绑定执行时的上下文, this默认指向window, 打印了全局变量x的值
+var g = f.bind(o)
+g() //10, 绑定this后, 成功的打印了o对象的x属性的值.
 ```
 
 ### 5. git rebase 和 git merge 的区别
@@ -119,6 +119,7 @@ g(); //10, 绑定this后, 成功的打印了o对象的x属性的值.
 merge 操作会生成一个新的节点，之前的提交分开显示。而 rebase 操作不会生成新的节点，是将两个分支融合成一个线性的提交。
 
 ### 6. 箭头函数
+
 - 箭头函数没有它自己的 this 值，箭头函数内的 this 值继承自外围作用域
 - 箭头函数不能用作构造器，不能和 new 一起使用
 - 箭头函数没有原型属性
