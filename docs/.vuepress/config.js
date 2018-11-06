@@ -2,7 +2,7 @@ module.exports = {
   // base: '/front-end-interview-guide/',
   base: '',
   head: [
-    ['link', { rel: 'shortcut icon', type: "image/x-icon", href: `./public/favicon.ico` }]
+    ['link', { rel: 'shortcut icon', type: "image/x-icon", href: `./favicon.ico` }]
  ],
   locales: {
     '/': {
