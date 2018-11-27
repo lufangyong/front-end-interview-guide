@@ -34,7 +34,7 @@ module.exports = {
       '/front-end/': [
         '',
         'JS',
-        'browser',
+        'Browser',
         'CSS',
         'frame',
         'FNEngineering',
