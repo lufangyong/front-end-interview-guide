@@ -54,6 +54,8 @@ module.exports = {
         '',
         'resume',
         'tricks',
+        'js',
+        'css',
         'common',
         '360',
         'mt-ele',
