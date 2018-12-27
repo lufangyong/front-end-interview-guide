@@ -16,6 +16,17 @@
 - [30-seconds-of-code](https://github.com/30-seconds/30-seconds-of-code)，30 秒系列，很短的代码片段让你了解一个知识点。
 - [must-watch-javascript](https://github.com/AllThingsSmitty/must-watch-javascript)，这份资料包含了很多高质量的前端相关视频，值得一看
 
+## CSS
+- [css-protips](https://github.com/AllThingsSmitty/css-protips)，通过这份资料你可以学习到很多 tips 来提高你的 CSS 技能。
+- [30-seconds-of-css](https://github.com/30-seconds/30-seconds-of-css)，30 秒系列，很短的代码片段让你了解一个知识点。
+- [一些有趣的 CSS 话题](https://github.com/chokcoco/iCSS)，CSS 奇技淫巧，在这里，都有。
+
+## 框架
+框架这里其实我不想推荐任何的资料，如果你单纯想学习一个框架的话，我只推荐阅读官方文档学习，没有任何的必要去学习其他的入门资料，因为基本上都是照搬文档的。
+
+## 周报
+- [奇舞周刊](https://weekly.75team.com/)，每周都会整理一份不错的中文文章合集。
+
 ## 分享书籍
 
 ### JS 相关

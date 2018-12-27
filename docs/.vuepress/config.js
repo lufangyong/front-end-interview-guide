@@ -34,7 +34,7 @@ module.exports = {
       '/front-end/': [
         '',
         'JS',
-        'Browser',
+        'browser',
         'CSS',
         'frame',
         'FNEngineering',
@@ -60,19 +60,6 @@ module.exports = {
         '360',
         'mt-ele',
         'tt',
-      ],
-      '/career-plan/': [
-        '',
-        '01',
-        '02',
-      ],
-      '/interview-questions/': [
-        '',
-        '01',
-        '02',
-        '03',
-        '04',
-        '05',
       ],
       '/': [
         '',
