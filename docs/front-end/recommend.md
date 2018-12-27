@@ -7,6 +7,15 @@
 - [Vue.js 技术揭秘](https://ustbhuangyi.github.io/vue-analysis/)分析 Vue 的源码，我们将会介绍一些前置知识如 flow、源码目录、构建方式、编译入口等
 - [Vue 技术内幕](http://hcysun.me/vue-design/art/2vue-constructor.html)超级详细 - 逐行级别的分析
 
+## JS
+- [You-Dont-Know-JS](https://github.com/getify/You-Dont-Know-JS)这套书深入的讲解很多 JS 的内容，英文版是开源免费阅读的，如果你英文不好的话，国内这套书已经有出版了，可以选择购买
+- [Functional-Light-JS](https://github.com/getify/Functional-Light-JS)，这本书是讲解函数式编程的，函数式编程也是一种编程范式，轻量级的函数式可以很方便的解决很多问题，有兴趣的可以一读
+- [33-js-concepts](https://github.com/stephentian/33-js-concepts),这份资料讲解了 33 个前端开发必须知道的 JS 概念
+- [前端精读周刊](https://github.com/dt-fe/weekly)，这是一份前端好文集合，每周都会更新，目前已经更新了 84 篇文章。
+- [前端性能清单](https://github.com/JohnsenZhou/Front-End-Performance-Checklist)，这是一份前端性能清单，如果你需要优化一个项目的话，可以根据这份清单一个个来检查优化项。
+- [30-seconds-of-code](https://github.com/30-seconds/30-seconds-of-code)，30 秒系列，很短的代码片段让你了解一个知识点。
+- [must-watch-javascript](https://github.com/AllThingsSmitty/must-watch-javascript)，这份资料包含了很多高质量的前端相关视频，值得一看
+
 ## 分享书籍
 
 ### JS 相关
