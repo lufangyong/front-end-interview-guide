@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>数据结构 | 面试指南</title>
+    <meta name="description" content="">
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.cc2a2ebf.css" as="style"><link rel="preload" href="/assets/js/app.17e7384b.js" as="script"><link rel="preload" href="/assets/js/7.22ed9e45.js" as="script"><link rel="prefetch" href="/assets/js/13.b419daba.js"><link rel="prefetch" href="/assets/js/2.cda51ec0.js"><link rel="prefetch" href="/assets/js/3.ef3ee796.js"><link rel="prefetch" href="/assets/js/4.2e46cd24.js"><link rel="prefetch" href="/assets/js/5.bec878ff.js"><link rel="prefetch" href="/assets/js/6.539a2935.js"><link rel="prefetch" href="/assets/js/8.7646f7cd.js"><link rel="prefetch" href="/assets/js/9.7f41828b.js"><link rel="prefetch" href="/assets/js/10.dc5d0640.js"><link rel="prefetch" href="/assets/js/11.194957a4.js"><link rel="prefetch" href="/assets/js/12.9ae0f5ed.js"><link rel="prefetch" href="/assets/js/14.e6b680b7.js"><link rel="prefetch" href="/assets/js/15.f4550f65.js"><link rel="prefetch" href="/assets/js/16.6c41112e.js"><link rel="prefetch" href="/assets/js/17.f5236e37.js"><link rel="prefetch" href="/assets/js/18.7b2decb8.js"><link rel="prefetch" href="/assets/js/19.45ef936f.js"><link rel="prefetch" href="/assets/js/20.b6776b5a.js"><link rel="prefetch" href="/assets/js/21.5ddbd38c.js"><link rel="prefetch" href="/assets/js/22.d6bb9334.js"><link rel="prefetch" href="/assets/js/23.17390f50.js"><link rel="prefetch" href="/assets/js/24.3b2112ec.js"><link rel="prefetch" href="/assets/js/25.b6fac30f.js"><link rel="prefetch" href="/assets/js/26.dbe699e8.js"><link rel="prefetch" href="/assets/js/27.3f5a9dee.js"><link rel="prefetch" href="/assets/js/28.3514e3df.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.cc2a2ebf.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">面试指南</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/front-end/" class="nav-link">前端</a></div><div class="nav-item"><a href="/calculation/" class="nav-link router-link-active">计算机基础</a></div><div class="nav-item"><a href="/interview/" class="nav-link">面试</a></div><div class="nav-item"><a href="https://github.com/lufangyong" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/front-end/" class="nav-link">前端</a></div><div class="nav-item"><a href="/calculation/" class="nav-link router-link-active">计算机基础</a></div><div class="nav-item"><a href="/interview/" class="nav-link">面试</a></div><div class="nav-item"><a href="https://github.com/lufangyong" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/calculation/" class="sidebar-link">计算机基础</a></li><li><a href="/calculation/data-structure.html" class="active sidebar-link">数据结构</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/calculation/data-structure.html#栈" class="sidebar-link">栈</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/calculation/data-structure.html#栈数据结构" class="sidebar-link">栈数据结构</a></li><li class="sidebar-sub-header"><a href="/calculation/data-structure.html#创建栈" class="sidebar-link">创建栈</a></li><li class="sidebar-sub-header"><a href="/calculation/data-structure.html#应用" class="sidebar-link">应用</a></li></ul></li><li class="sidebar-sub-header"><a href="/calculation/data-structure.html#队列" class="sidebar-link">队列</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/calculation/data-structure.html#队列数据结构" class="sidebar-link">队列数据结构</a></li><li class="sidebar-sub-header"><a href="/calculation/data-structure.html#创建队列" class="sidebar-link">创建队列</a></li></ul></li></ul></li><li><a href="/calculation/calculation.html" class="sidebar-link">算法</a></li></ul> </div> <div class="page"> <div class="content"><h1 id="数据结构"><a href="#数据结构" aria-hidden="true" class="header-anchor">#</a> 数据结构</h1> <h2 id="栈"><a href="#栈" aria-hidden="true" class="header-anchor">#</a> 栈</h2> <p>数组是计算机科学中最常用的数据结构。我们知道，可以在数组的任意位置上删除或添加元素。然而，有时候我们还需要一种在添加或删除元素时有更多控制的数据结构。有两种数据结构类似于数组，但在添加和删除元素时更为可控。它们就是栈和队列。</p> <h3 id="栈数据结构"><a href="#栈数据结构" aria-hidden="true" class="header-anchor">#</a> 栈数据结构</h3> <p>栈是一种遵从后进先出（LIFO）原则的有序集合。新添加的或待删除的元素都保存在栈的
+同一端，称作栈顶，另一端就叫栈底。在栈里，新元素都靠近栈顶，旧元素都接近栈底。</p> <p>在现实生活中也能发现很多栈的例子。例如，下图里的一摞书或者餐厅里堆放的盘子。</p> <h3 id="创建栈"><a href="#创建栈" aria-hidden="true" class="header-anchor">#</a> 创建栈</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">class</span> <span class="token class-name">Stack</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>stack <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 添加一个（或几个）新元素到栈顶</span>
+  <span class="token function">push</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 移除栈顶的元素，同时返回被移除的元素</span>
+  <span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 返回栈顶的元素，不对栈做任何修改（这个方法不会移除栈顶的元素，仅仅返回它）</span>
+  <span class="token function">peek</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>stack<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 如果栈里没有任何元素就返回 true ，否则返回 false</span>
+  <span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">0</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 返回栈里的元素个数。这个方法和数组的 length 属性很类似</span>
+  <span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>stack<span class="token punctuation">.</span>length
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 移除栈里的所有元素</span>
+  <span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>stack <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="应用"><a href="#应用" aria-hidden="true" class="header-anchor">#</a> 应用</h3> <p><a href="https://leetcode-cn.com/problems/valid-parentheses/description/" target="_blank" rel="noopener noreferrer">选取了 LeetCode 上序号为 20 的题目<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。</p> <p>有效字符串需满足：</p> <ol><li>左括号必须用相同类型的右括号闭合。</li> <li>左括号必须以正确的顺序闭合。</li> <li>注意空字符串可被认为是有效字符串。</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">isValid</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> map <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'('</span><span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">')'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'{'</span><span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'}'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'['</span><span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">']'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> stack <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> str<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>map<span class="token punctuation">[</span>str<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>str<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> last <span class="token operator">=</span> stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>map<span class="token punctuation">[</span>last<span class="token punctuation">]</span> <span class="token operator">+</span> map<span class="token punctuation">[</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>stack<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="队列"><a href="#队列" aria-hidden="true" class="header-anchor">#</a> 队列</h2> <h3 id="队列数据结构"><a href="#队列数据结构" aria-hidden="true" class="header-anchor">#</a> 队列数据结构</h3> <p>队列是遵循FIFO（First In First Out，先进先出，也称为先来先服务）原则的一组有序的项。
+队列在尾部添加新元素，并从顶部移除元素。最新添加的元素必须排在队列的末尾。</p> <p>在现实中，最常见的队列的例子就是排队：</p> <p>还有，在电影院、自助餐厅、杂货店收银台，我们也都会排队。排在第一位的人会先接受
+服务。</p> <p>在计算机科学中，一个常见的例子就是打印队列。比如说我们需要打印五份文档。我们会打
+开每个文档，然后点击打印按钮。每个文档都会被发送至打印队列。第一个发送到打印队列的文
+档会首先被打印，以此类推，直到打印完所有文档。</p> <h3 id="创建队列"><a href="#创建队列" aria-hidden="true" class="header-anchor">#</a> 创建队列</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">class</span> <span class="token class-name">Queue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>queue <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 向队列尾部添加一个（或多个）新的项</span>
+  <span class="token function">enqueue</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>queue<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 移除队列的第一（即排在队列最前面的）项，并返回被移除的元素</span>
+  <span class="token function">dequeue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>queue<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 返回队列中第一个元素——最先被添加，也将是最先被移除的元素。队列不做任何变动（不移除元素，只返回元素信息——与 Stack 类的 peek 方法非常类似）</span>
+  <span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>queue<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 如果队列中不包含任何元素，返回 true ，否则返回 false</span>
+  <span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>queue<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 返回队列包含的元素个数，与数组的 length 属性类似</span>
+  <span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>queue<span class="token punctuation">.</span>length
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/calculation/" class="prev router-link-active">
+          计算机基础
+        </a></span> <span class="next"><a href="/calculation/calculation.html">
+          算法
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/7.22ed9e45.js" defer></script><script src="/assets/js/app.17e7384b.js" defer></script>
+  </body>
+</html>
