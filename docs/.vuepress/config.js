@@ -33,11 +33,11 @@ module.exports = {
     sidebar: {
       '/front-end/': [
         '',
-        'JS',
+        'js',
         'browser',
-        'CSS',
+        'css',
         'frame',
-        'FNEngineering',
+        'fe-ngineering',
         'performance',
         'http',
         'safe',
