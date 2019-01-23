@@ -43,6 +43,7 @@ module.exports = {
         'safe',
         'design-pattern',
         'node',
+        'standard',
         'recommend',
       ],
       '/calculation/': [
